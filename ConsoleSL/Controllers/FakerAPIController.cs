@@ -18,7 +18,7 @@ namespace ConsoleSL.Controllers
         public async Task<PersonResponse?> ConsultaPersons()
         {
             var client = new HttpClient();
-            var request = new HttpRequestMessage(HttpMethod.Get, "https://fakerapi.it/api/v1/persons?_quantity=20&_locale=pt_BR");
+            var request = new HttpRequestMessage(HttpMethod.Get, "https://fakerapi.it/api/v1/persons?_quantity=200&_locale=pt_BR");
             var response = await client.SendAsync(request);
             if (response.IsSuccessStatusCode) { 
                 string jsonResponse = await response.Content.ReadAsStringAsync();
